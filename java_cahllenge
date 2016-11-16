@@ -1,0 +1,157 @@
+// purpose: return greatest number out of two numbers
+// signature: (Integers, Integers) -> Integer
+// Examples: greaterNum (12, 15) -> 15
+//Examples: greaterNum (23, 3) -> 23
+//Examples: greaterNum (0, 1) -> 1
+
+//write a function that takes two arguments
+function greaterNum(int1, int2) {
+  if (int1 > int2){
+    return int1;
+  }
+  else {
+    return int2;
+  }
+}
+
+//purpose: return the phrase "hello world" for given language
+//signature: (String)-> String
+//examples: helloWorld("es")-> "hola muendo"
+//example: helloWorld("fr")-> "Bonjour"
+//make sure to put quotes within argument if they aren't a number
+
+var es = "Hola Mundo";
+var fr = "Bonjour le monde";
+var en = "Hello World";
+
+function helloWorld(str){
+  if (str === "es") {
+    alert("Hola Mundo");
+  }
+  else if (str === "fr") {
+    alert("Bonjour le monde");
+  }
+  else {
+    alert("Hello World");
+  }
+}
+
+//Purpose: the purpose is to put in a number, and associate it with a grade
+//Signature: assignedGrade(int) -> String aka.letter grade
+//Example: assignedGrade(80) -> "B"
+//Example: assignedGrade(48) ->"F"
+//Example: assignedGrade(95) ->"A"
+
+function assignedGrade(numG){
+  if (numG >= 90 && numG <= 100){
+    console.log("A");
+  }
+  else if (numG >=70 && numG <=89){
+    console.log("B");
+  }
+  else if (numG >=60 && numG<=69){
+    console.log("C");
+  }
+  else if (numG>=50 && numG<=59){
+    console.log("D");
+  }
+  else if (numG<=49){
+    console.log("F");
+  }
+}
+
+//purpose: changes words to plural for numbers greater than one
+//signature: pluralize(Integer, String)-> String
+//examples: pluralize(1, "dog"); -> "1 dog"
+//pluralize(2, "cow"); -> "2 cows"
+//pluralize(5, "cat"); -> "5 cats"
+
+function pluralize (num, str) {
+ if (num > 1 && str === "child") {
+    console.log(num + " " + "children");
+  }
+  else if (num > 1){
+    console.log(num + " " + str + "s");
+  }
+
+  else {
+    console.log(num + " " + str);
+  }
+}
+
+//for above problem, we put if statement for "child" first because we wanted to rule it out first before adding an "s"
+
+//purpose: to check numbers 1-15 and print out wheather the number is odd or even
+//signature: while loop that prints numbers 1 through 15 and adds odd or even
+// example(how it will look): 0 is even
+                            //1 is odd
+//i++, i+=1 , and i = i + 1 all mean and one to i.
+// used a while loop so we could iterate through 15 starting at 0.
+function count() {
+  var i = 0;
+while (i <= 15 ){
+  if (i === 0 || i % 2===0){
+    console.log(i + " is even");
+  }
+  else {
+    console.log(i + " is odd");
+  }
+  i++;
+}
+}
+
+//purpose: print numbers 1-100 (inclusive) replace numbers that are divisble by 3 with Fizz and numbers that are divisble by five with Buzz and numbers that are divisble by both with FizzBuzz.
+//signature: we will create a function that includes a while loop and the output will be a list of number's/bzz,fizz and buzzfizz that replace the ruled out numbers
+//example: 1, 2, Fizz, 4, Buzz.......
+
+function fizzBuzz (){
+  var i=1;
+  while (i <= 100){
+    if (i % 3===0 && i % 5===0){
+      console.log("FizzBuzz");
+    }
+    else if (i % 3===0){
+      console.log("Fizz");
+    }
+    else if (i % 5===0){
+      console.log("Buzz");
+    }
+    else {
+      console.log(i);
+    }
+    i++;
+  }
+}
+
+//purpose:to create a game where the computer picks a random number, and the user tries to guess it. if the user guesses the right number, then the game is over
+//signature:creating a function that selectes a random number and prompts the user to guess the number
+//example: Computer generates random number(8), and user is prompt to guess
+
+function hiLo (){
+  var getRandom = Math.floor((Math.random() * 100) + 1);
+  console.log(getRandom);
+ var num = prompt("Guess a number between 1 and 100");
+  while (parseInt(num) != getRandom) {
+     if (parseInt(num) < getRandom){
+       alert("Guess is to low");
+       num = prompt("guess again");
+     }
+     else if (parseInt(num) > getRandom){
+       alert("Guess is to hi");
+       num = prompt("guess again!");
+     }
+   }
+   alert("You win!");
+ }
+
+
+ //purpose: input a string of words and it will return 5 letter's of the word reversed
+ //signature:input a string and will return a string
+ //example: "Hi there neighbor"" -> "Hi ereht robhgien"
+
+ function revChal (str){
+   var split = str.split("");
+   var rev = split.reverse();
+   var join = rev.join("");
+   return "Hi " + join;
+ }
